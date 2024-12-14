@@ -1,0 +1,22 @@
+
+def recommend_clothing(temperature, precipitation):
+    if temperature >= 30:
+        clothing = " майка и шорты,шлепанцы и кепка."
+    elif 20 <= temperature < 30:
+        clothing = " легкая куртка и джинсы, кроссовки ."
+    elif 10 <= temperature < 20:
+        clothing = " легкая куртка и джинсы, кроссовки ."
+    elif 0 <= temperature < 10:
+        clothing = " свитер и ботинки,куртка шапка."
+    else:
+        clothing = " зимняя куртка и шарф."
+
+    if precipitation:
+        clothing += " Не забудьте зонт или дождевик,непромокаемая обувь"
+
+    return clothing
+
+temperature = float(input("Введите температуру в градусах Цельсия: "))
+precipitation = input("Есть ли осадки (да/нет)? ").strip().lower() == 'да'
+
+print(recommend_clothing(temperature, precipitation))
